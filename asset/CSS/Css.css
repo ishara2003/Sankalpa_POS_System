@@ -1,0 +1,519 @@
+body {
+    background: #827c7c5e;
+}
+
+#logIn{
+
+    z-index: 11;
+    background-image: url("../images/03.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    position: absolute;
+    width: 100vw;
+    height: 98.9vh;
+    /*border: 2px solid hotpink;*/
+    display: flex;
+    margin-left: -5px;
+
+}
+
+/*login>div{*/
+
+
+/*    position: relative;*/
+/*    width: 20vw;*/
+/*    height: 20vh;*/
+/*    border: 2px solid green;*/
+/*    left: 0;*/
+/*    margin-left: -6px;*/
+/*    background: white;*/
+/*}*/
+
+#nav{
+
+
+
+    position: absolute;
+
+    width: max-content;
+    height: max-content;
+    /*border: 2px solid blue;*/
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+
+#un{
+    width: 15vw;
+    height: 6vh;
+    font-size: 22px;
+    margin-bottom: 40px;
+    border-radius: 2rem;
+}
+
+#pw{
+    width: 15vw;
+    height: 6vh;
+    font-size: 22px;
+    /*margin-bottom: 70px;*/
+    border-radius: 2rem;
+
+
+}
+
+#btn_logIn{
+    font-size: 22px;
+    /*margin-bottom: 70px;*/
+    border-radius: 2rem;
+    left: 45.5vw;
+    position: relative;
+    bottom: -65vh;
+    background-color: yellow;
+    width: 8vw;
+    height: 4vh;
+}
+
+#btn_logIn:hover{
+    cursor: pointer;
+}
+
+/*====================End Of The Login Form====================*/
+
+#dash_Board{
+    /*position: absolute;*/
+    margin-left: 0;
+    width: 99.5vw;
+    height: 88.9vh;
+    /*border: 2px solid hotpink;*/
+    display: block;
+}
+
+a:visited{
+    color: #fd7e14;
+}
+#navbar{
+    z-index: 10;
+    width: 99.8vw;
+    left: -5px;
+}
+
+#nav_cus{
+}
+
+.nav-item{
+    font-family: "Roboto Thin";
+
+    font-size: 25px;
+    font-weight: bolder;
+    color: #ffffff;
+
+}
+.nav-item:hover{
+    border-bottom: #9a69ea solid medium;
+    border-bottom-style: double;
+    color: #1a1e21;
+}
+
+#dash_Board > input{
+
+    border-radius: 20px;
+    border: #6610f2 solid;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: calc(100% / 5);
+    height: 5vh;
+    margin-left: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #03034f;
+}
+
+thead > tr > th{
+
+    border-top: 2px dotted black;
+}
+
+/*===========================End Of Customer Form===============================*/
+
+
+#item_pane{
+    position: absolute;
+    /*z-index: 30;*/
+    margin-left: 0;
+    top: 0;
+    width: 99.5vw;
+    height: 98.9vh;
+    /*border: 2px solid hotpink;*/
+    display: block;
+}
+
+
+#item_pane > input{
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Orbitron&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap');
+    border-radius: 20px;
+    border: #6610f2 solid;
+    margin-top: 135px;
+    /*margin-bottom: 200px;*/
+    width: calc(100% / 6);
+    height: 5vh;
+    margin-left: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto Thin";
+    color: #03034f;
+    display: grid;
+}
+
+#item_pane>div{
+    position: absolute;
+    right: 41px;
+    top: 250px;
+    width: 69vw;
+    height: 66vh;
+    /*border: 2px solid #6610f2;*/
+}
+
+#place_order{
+    position: absolute;
+    /*z-index: 30;*/
+    margin-left: 0;
+    top: 0;
+    width: 99.5vw;
+    height: 98.9vh;
+    /*border: 2px solid hotpink;*/
+    display: block;
+}
+
+/*======================Buttons CSS=========================*/
+
+.candy-button {
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to top, red, blue) 1;
+}
+
+.candy-button:hover {
+    color: #FFFFFF;
+    background-color: #FFC0CB;
+}
+
+#btn_add_customer:hover{
+    color: #FFFFFF;
+    background-color: #1a13d7;
+}
+#btn_add_customer{
+    border-width: 4px;
+    border-style: solid;
+    border-image: linear-gradient(to top, #ff00fb, #01fdf6) 1;
+    margin-left: 20px;
+
+    color: #2d2f91;
+    background: transparent;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+#btn_clear_txt_filed{
+    position: absolute;
+    right: 20px;
+    top: 300px;
+    border-radius: 10px;
+    color: #b70707;
+    background: #ffffff;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bolder;
+}
+#btn_clear_txt_filed:hover{
+    color: #FFFFFF;
+    background: #ff0000;
+}
+
+#btn_update{
+    position: absolute;
+    right: 110px;
+    top: 300px;
+    border-radius: 10px;
+    color: #095927;
+    background: #ffffff;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bolder;
+}
+#btn_update:hover{
+    color: #FFFFFF;
+    background: #6610f2;
+}
+
+#btn_search{
+    position: absolute;
+    right: 225px;
+    top: 300px;
+    border-radius: 10px;
+    color: #3eff06;
+    background: #ffffff;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bolder;
+}
+#btn_search:hover{
+
+    background: #045b42;
+}
+
+#btn_clear_txt_filed_item{
+    position: absolute;
+    right: 20px;
+    top: 850px;
+    border-radius: 10px;
+    color: #b70707;
+    background: #ffffff;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bolder;
+}
+#btn_clear_txt_filed_item:hover{
+    color: #FFFFFF;
+    background: #ff0000;
+}
+
+#btn_add_item{
+    border-width: 4px;
+    border-style: solid;
+    margin-left: 155px;
+    color: #2d2f91;
+    background: transparent;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bolder;
+    margin-top: 45px;
+    border-image: linear-gradient(to top, #ff00fb, #01fdf6) 1;
+}
+#btn_add_item:hover{
+    color: #FFFFFF;
+    background-color: #1a13d7;
+}
+
+#btn_update_item{
+    position: absolute;
+    right: 110px;
+    top: 850px;
+    border-radius: 10px;
+    color: #0b2350;
+    background: #FFFFFF;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bolder;
+}
+#btn_update_item:hover{
+    color: #FFFFFF;
+    background: #6610f2;
+
+}
+
+#btn_search_item{
+    position: absolute;
+    right: 225px;
+    top: 850px;
+    border-radius: 10px;
+    color: #3eff06;
+    background: #FFFFFF;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bolder;
+}
+#btn_search_item:hover{
+    color: #3eff06;
+    background: #045b42;
+
+}
+
+#btn_new_cus_at_Order{
+    margin-left: 10px;
+    position: relative;
+    top: 150px;
+    background: transparent;
+    border-image: linear-gradient(to top, #ff00fb, #01fdf6) 1;
+    border-width: 2px;
+    border-style: solid;
+    font-weight: bolder;
+}
+#btn_new_cus_at_Order:hover{
+    background: #10f223;
+    color: #FFFFFF;
+}
+/*=============================End Of Buttons CSS=====================*/
+
+#order_cus_nic{
+    position: relative;
+    top: 150px;
+    border-radius: 20px;
+    border: #6610f2 solid;
+    width: calc(100% / 6);
+    height: 5vh;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto Thin", serif;
+    color: #03034f;
+}
+
+#order_cus_name{
+    position: relative;
+    margin-left: 25px;
+    top: 175px;
+    border-radius: 20px;
+    border: #77767a solid;
+    width: calc(100% / 8);
+    height: 5vh;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto Thin", serif;
+    color: #03034f;
+
+}
+#order_item_qty{
+    position: absolute;
+    /*margin-left: 25px;*/
+    top: 225px;
+    right: 285px;
+    border-radius: 20px;
+    border: #77767a solid;
+    width: calc(100% / 8);
+    height: 5vh;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto Thin", serif;
+    color: #03034f;
+}
+#order_item_price{
+    position: absolute;
+    top: 225px;
+    right: 25px;
+    border-radius: 20px;
+    border: #77767a solid;
+    width: calc(100% / 8);
+    height: 5vh;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto Thin", serif;
+    color: #03034f;
+}
+#order_item_name\/id{
+    position: absolute;
+    top: 150px;
+    right: 10px;
+    border-radius: 20px;
+    border: #6610f2 solid;
+    width: calc(100% / 6);
+    height: 5vh;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto Thin", serif;
+    color: #03034f;
+}
+#order_id{
+    position: relative;
+    top: 110px;
+    right: -528px;
+    border-radius: 20px;
+    border: #6610f2 solid;
+    width: calc(100% / 10);
+    height: 5vh;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto Thin", serif;
+    color: #03034f;
+}
+#order_qty{
+    position: relative;
+    top: 176px;
+    right: -507px;
+    border-radius: 20px;
+    border: #6610f2 solid;
+    width: calc(100% / 8);
+    height: 5vh;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto Thin", serif;
+    color: #03034f;
+}
+#order_date{
+    position: relative;
+    top: 176px;
+    right: 125px;
+    border-radius: 20px;
+    border: #6610f2 solid;
+    width: calc(100% / 8);
+    height: 5vh;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Roboto Thin", serif;
+    color: #03034f;
+}
+#btn_add_to_cart{
+    position: relative;
+    top: 306px;
+    right: -815px;
+    width: calc(100% / 17);
+    height: 3.9vh;
+    border-image: linear-gradient(to top, #ff00fb, #01fdf6) 1;
+    border-width: 2px;
+    border-style: solid;
+    background: rgba(94, 255, 0, 0.47);;
+}#btn_add_to_cart:hover{
+     background: linear-gradient(to bottom, #ff6b6b, #ffb347); background-color: #78c5ef;
+ }
+#btn_order_clear{
+    position: relative;
+    top: 306px;
+    right: -515px;
+    width: calc(100% / 17);
+    height: 3.9vh;
+    background: #fa8e8e;
+}
+#place_order>div{
+    position: relative;
+    top: 350px;
+    overflow: auto;
+    height: 300px;
+}
+#lbl_total{
+    position: relative;
+    font-size: 40px;
+    font-weight: bolder;
+    bottom: -438px;
+    right: -10px;
+    width: 150px;
+}
+#txt_total{
+    position: relative;
+    font-size: 30px;
+    font-weight: bolder;
+    bottom: -438px;
+    right: 15px;
+    width: 100px;
+
+}
+#btn_place_order{
+    position: relative;
+    font-size: 20px;
+    font-weight: bolder;
+    bottom: -438px;
+    right: -1400px;
+    width: 150px;
+    height: 5vh;
+    border-image: linear-gradient(to top, #ff00fb, #01fdf6) 1;
+    border-width: 2px;
+    border-style: solid;
+    background: rgba(94, 255, 0, 0.47);
+}#btn_place_order:hover{
+     background: linear-gradient(to bottom, #ff6b6b, #ffb347); background-color: #78c5ef;
+ }
+

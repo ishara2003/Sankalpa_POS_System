@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assigment6</title>
+
+    <link rel="stylesheet" href="asset/CSS/Css.css">
+    <link rel="stylesheet" href="asset/boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/boostrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="asset/fonts/fontawesome-free-6.4.0-web/css/all.min.css">
+</head>
+<body style="margin: 0; margin-left: 7px;background: #827c7c5e;">
+
+<login id="logIn">
+
+    <div>
+
+    </div>
+    
+    <nav id="nav">
+        <input type="text" name="username" id="un" placeholder="User Name" style="text-align:center;">
+        <br>
+        <input type="password" name="password" id="pw" placeholder="Password" style="text-align:center;">
+        <br>
+    </nav>
+        <button id="btn_logIn" type="button">Log In</button>
+
+</login>
+<nav style="background-color: #105ec4;  font-family:Roboto Thin; box-shadow: rgba(0, 255, 255, 0.64) 0px -65px 36px -28px inset;"
+     id="navbar" class="navbar bg-body-tertiary px-3 mb-3">
+    <a
+            style="font-size: 40px; color: greenyellow; font-style: italic;"
+       class="navbar-brand" href="#">Sankalpa POS System
+    </a>
+    <img style="position: relative;left: -450px;" src="asset/images/04.png" alt="" width="50px">
+
+    <ul style="margin-right: 50px" class="nav nav-pills">
+
+        <li id="nav_cus" class="nav-item" style="margin-left: 35px; cursor:pointer">Customer
+            <!--                <a class="cus" href="#scrollspyHeading1">Customer</a>-->
+        </li>
+
+        <li id="items" class="nav-item" style="margin-left: 35px; cursor:pointer">Items
+            <!--                <a class="nav-link" href="#scrollspyHeading2">Items</a>-->
+        </li>
+
+        <li id="order" class="nav-item" style="margin-left: 35px; cursor:pointer">Orders
+            <!--                <a class="nav-link" href="#scrollspyHeading1">Orders</a>-->
+        </li>
+        <li id="order_details" class="nav-item" style="margin-left: 35px; cursor:pointer">Order Details</li>
+
+    </ul>
+</nav>
+
+<customer_pane id="dash_Board">
+
+
+    <input type="text" name="cus_id" id="Customer_Id" placeholder="Customer_NIC">
+    <input type="text" name="cus_name" id="Customer_Name" placeholder="Customer_Name">
+    <input type="text" name="cus_address" id="Customer_Address" placeholder="Customer_Address">
+    <input type="text" name="cus_number" id="Customer_Number" placeholder="Customer_Number">
+
+    <button
+       style="" id="btn_add_customer"
+       type="button">Register
+    </button>
+
+    <br>
+
+    <button style="" type="button"
+       id="btn_clear_txt_filed">Clear</button>
+
+ <button style="" type="button"
+       id="btn_update">Update</button>
+
+ <button style="" type="button"
+       id="btn_search">Search</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <table class="table">
+
+        <thead>
+        <tr>
+            <th scope="col">#NIC</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Number</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
+
+</customer_pane>
+
+<itam_pane id="item_pane">
+
+    <br>
+    <br>
+
+    <input type="text" name="cus_id" id="item_ID" placeholder="Item_Id">
+    <input type="text" name="cus_name" id="item_Name" placeholder="Item_Name">
+    <input type="text" name="cus_address" id="item_Price" placeholder="Item_Price">
+    <input type="text" name="cus_number" id="item_QTY" placeholder="Item_QTY">
+
+    <button id="btn_add_item"type="button">Add Item
+    </button>
+
+    <button style="" type="button"
+            id="btn_clear_txt_filed_item">Clear</button>
+
+    <button style="" type="button"
+            id="btn_update_item">Update</button>
+
+    <button style="" type="button"
+            id="btn_search_item">Search</button>
+
+
+    <div style="overflow: auto; height: 300px;">
+
+    <table class="table">
+
+        <thead>
+        <tr>
+            <th scope="col">#Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
+
+    </div>
+
+</itam_pane>
+
+<Place_Order id="place_order">
+
+    <input type="text" name="" id="order_cus_nic" placeholder="Customer_NIC">
+    <button id="btn_new_cus_at_Order" style="" type="button"><i class="fa-regular fa-plus fa-beat-fade" style="color: #11727a;"></i>   New</button>
+    <br>
+    <input type="text" name="" id="order_cus_name"disabled placeholder="Customer_Name">
+
+    <input type="text" name="" id="order_id" placeholder="Order_Id">
+    <input type="text" name="" id="order_qty" placeholder="Used_Quantity">
+    <input type="date" name="" id="order_date">
+
+
+    <input type="text" name="" id="order_item_name/id" placeholder="Item_name / Id">
+    <input type="text" name="" id="order_item_price"disabled placeholder="Item_Price">
+    <input type="text" name="" id="order_item_qty"disabled placeholder="Item_QTY / Id">
+
+    <button id="btn_add_to_cart" type="button"><i class="fa-solid fa-cart-plus fa-beat-fade"></i>   Add</button>
+    <button id="btn_order_clear" type="button">Clear</button>
+
+
+<div style="">
+
+    <table class="table">
+
+        <thead>
+        <tr>
+            <th scope="col">#Order_Id</th>
+            <th scope="col">Item_Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity_Used</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr><tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+    <label for="txt_total" style="" id="lbl_total">Total :</label>
+    <input type="text" name="total" id="txt_total" disabled>
+
+    <button id="btn_place_order" type="button">Place Order</button>
+</Place_Order>
+
+<script src="asset/jQuerry/jquery-3.6.4.min.js"></script>
+<script !src="">
+
+//==============================Log In========================================================
+    document.getElementById("btn_logIn").addEventListener('click',function (e) {
+
+        let username="Ishara";
+        let password="Ishara75";
+
+        let un = $('#un').val();
+        let pw = $('#pw').val();
+
+        $('logIn').css({display:"none"})
+        $('#item_pane').css({display: "none"})
+        $('#place_order').css({display: "none"})
+        $('dash_Board').css({display:"block"})
+
+        if (un===username && pw===password){
+
+        }else {
+            // alert("Password in Wrong")
+        }
+
+    });
+//============================================================================================
+
+//==============================Customer Pane Display========================================================
+document.getElementById("nav_cus").addEventListener("click",function () {
+    $('#dash_Board').css({display: "block"})
+    $('#item_pane').css({display: "none"})
+    $('#place_order').css({display: "none"})
+
+});
+
+//============================================================================================
+
+document.getElementById("items").addEventListener("click",function () {
+    $('#item_pane').css({display: "block"})
+    $('#dash_Board').css({display: "none"})
+    $('#place_order').css({display: "none"})
+    console.log("abasdasd");
+
+});
+
+//============================================================================================
+
+document.getElementById("order").addEventListener("click",function () {
+    $('#place_order').css({display: "block"})
+    $('#item_pane').css({display: "none"})
+    $('#dash_Board').css({display: "none"})
+    console.log("abasdasd");
+
+});
+
+//============================================================================================
+
+</script>
+
+
+</body>
+</html>
