@@ -405,7 +405,7 @@ thead > tr > th{
     font-family: "Roboto Thin", serif;
     color: #03034f;
 }
-#order_item_name\/id{
+#order_item_name{
     position: absolute;
     top: 150px;
     right: 10px;

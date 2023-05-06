@@ -81,7 +81,7 @@
     <br>
     <br>
 
-    <table class="table">
+    <table id="tbl_customer" class="table">
 
         <thead>
         <tr>
@@ -160,7 +160,7 @@
 
     <div style="overflow: auto; height: 300px;">
 
-    <table class="table">
+    <table id="tbl_item" class="table">
 
         <thead>
         <tr>
@@ -228,7 +228,7 @@
     <input type="date" name="" id="order_date">
 
 
-    <input type="text" name="" id="order_item_name/id" placeholder="Item_name / Id">
+    <input type="text" name="" id="order_item_name" placeholder="Item_name / Id">
     <input type="text" name="" id="order_item_price"disabled placeholder="Item_Price">
     <input type="text" name="" id="order_item_qty"disabled placeholder="Item_QTY / Id">
 
@@ -238,7 +238,7 @@
 
 <div style="">
 
-    <table class="table">
+    <table id="tbl_order" class="table">
 
         <thead>
         <tr>
@@ -289,6 +289,7 @@
         </tr>
         </tbody>
     </table>
+    <div></div>
 
 </div>
 
@@ -299,6 +300,7 @@
 </Place_Order>
 
 <script src="asset/jQuerry/jquery-3.6.4.min.js"></script>
+
 <script !src="">
 
 //==============================Log In========================================================
@@ -332,7 +334,17 @@ document.getElementById("nav_cus").addEventListener("click",function () {
 
 });
 
+//==========================New Customer In Order Form==================================================================
+document.getElementById("btn_new_cus_at_Order").addEventListener("click",function () {
+    $('#dash_Board').css({display: "block"})
+    $('#item_pane').css({display: "none"})
+    $('#place_order').css({display: "none"})
+
+});
+
 //============================================================================================
+
+//=============================Item Pane Display===============================================================
 
 document.getElementById("items").addEventListener("click",function () {
     $('#item_pane').css({display: "block"})
@@ -344,6 +356,8 @@ document.getElementById("items").addEventListener("click",function () {
 
 //============================================================================================
 
+//===============================Order Pane Display=============================================================
+
 document.getElementById("order").addEventListener("click",function () {
     $('#place_order').css({display: "block"})
     $('#item_pane').css({display: "none"})
@@ -353,6 +367,67 @@ document.getElementById("order").addEventListener("click",function () {
 });
 
 //============================================================================================
+
+//======================================Register Customer======================================================
+
+document.getElementById("btn_add_customer").addEventListener("click", function () {
+
+        let cus_nic = $("#Customer_Id").val();
+    console.log(cus_nic);
+    let cus_name = $("#Customer_Name").val();
+    let cus_address = $("#Customer_Address").val();
+    let cus_number = $("#Customer_Number").val();
+
+    $('#tbl_customer').append("<tr>" +
+        "<th scope='row'>" + cus_nic + "</th>" +
+        "<td>" + cus_name + "</td>" +
+        "<td>" + cus_address + "</td>" +
+        "<td>" + cus_number + "</td>" +
+        "</tr>")
+    }
+)
+//============================================================================================
+
+//======================================Register Item======================================================
+
+document.getElementById("btn_add_item").addEventListener("click", function () {
+
+        let item_id = $("#item_ID").val();
+    console.log(item_id);
+    let item_name = $("#item_Name").val();
+    let item_qty = $("#item_QTY").val();
+    let item_price = $("#item_Price").val();
+
+    $('#tbl_item').append("<tr>" +
+        "<th scope='row'>" + item_id + "</th>" +
+        "<td>" + item_name + "</td>" +
+        "<td>" + item_qty + "</td>" +
+        "<td>" + item_price + "</td>" +
+        "</tr>")
+    }
+)
+//============================================================================================
+
+//======================================Register Customer======================================================
+
+document.getElementById("btn_add_to_cart").addEventListener("click", function () {
+
+        let order_id = $("#order_id").val();
+    console.log(order_id);
+    let item_name = $("#order_item_name").val();
+    let item_price =$("#order_cus_nic").val();
+    let qty_used = $("#order_qty").val();
+
+    $('#tbl_order').append("<tr>" +
+        "<th scope='row'>" + order_id + "</th>" +
+        "<td>" + item_name + "</td>" +
+        "<td>" + item_price + "</td>" +
+        "<td>" + qty_used + "</td>" +
+        "</tr>")
+    }
+)
+//============================================================================================
+
 
 </script>
 
