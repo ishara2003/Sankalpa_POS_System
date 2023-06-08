@@ -84,6 +84,7 @@
     <table id="tbl_customer" class="table">
 
         <thead>
+
         <tr>
             <th scope="col">#NIC</th>
             <th scope="col">Name</th>
@@ -92,42 +93,23 @@
         </tr>
         </thead>
 
-        <tbody>
+        <tbody id="tbody_customer">
         <tr>
-            <th scope="row">1</th>
+            <td scope="row">1</td>
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
         </tr>
         <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
+            <td scope="row">2</td>
             <td>Jacob</td>
             <td>Thornton</td>
             <td>@fat</td>
         </tr>
         <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
+            <td scope="row">3</td>
+            <td>Larry the Bird</td>
+            <td>jone</td>
             <td>@twitter</td>
         </tr>
         </tbody>
@@ -173,40 +155,21 @@
 
         <tbody>
         <tr>
-            <th scope="row">1</th>
+            <td scope="row">1</td>
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
         </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
+       <tr>
+            <td scope="row">2</td>
             <td>Jacob</td>
             <td>Thornton</td>
             <td>@fat</td>
         </tr>
         <tr>
-            <th scope="row">3</th>
+            <td scope="row">3</td>
             <td colspan="2">Larry the Bird</td>
+            <td colspan="2"> Bird</td>
             <td>@twitter</td>
         </tr>
         </tbody>
@@ -249,7 +212,7 @@
         </tr>
         </thead>
 
-        <tbody>
+        <tbody id="tbody_item">
         <tr>
             <th scope="row">1</th>
             <td>Mark</td>
@@ -300,7 +263,10 @@
 </Place_Order>
 
 <script src="asset/jQuerry/jquery-3.6.4.min.js"></script>
-
+<script type="module" src="controller/CustomerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+<script src="db/dbConnection.js"></script>
+<script src="controller/CustomerController.js"></script>
 <script !src="">
 
 //==============================Log In========================================================
@@ -370,43 +336,45 @@ document.getElementById("order").addEventListener("click",function () {
 
 //======================================Register Customer======================================================
 
-document.getElementById("btn_add_customer").addEventListener("click", function () {
 
-        let cus_nic = $("#Customer_Id").val();
-    console.log(cus_nic);
-    let cus_name = $("#Customer_Name").val();
-    let cus_address = $("#Customer_Address").val();
-    let cus_number = $("#Customer_Number").val();
+$('#btn_update').on('click',(event)=>{
 
-    $('#tbl_customer').append("<tr>" +
-        "<th scope='row'>" + cus_nic + "</th>" +
-        "<td>" + cus_name + "</td>" +
-        "<td>" + cus_address + "</td>" +
-        "<td>" + cus_number + "</td>" +
-        "</tr>")
-    }
-)
+
+
+})
+
+/*=====================================================================================================================*/
+
+
+/*=====================================================================================================================*/
+
+$('#tbl_customer').innerHTML=null;
+
+// loadData();
+
 //============================================================================================
 
 //======================================Register Item======================================================
 
 document.getElementById("btn_add_item").addEventListener("click", function () {
 
-        let item_id = $("#item_ID").val();
+    /*        let item_id = $("#item_ID").val();
     console.log(item_id);
     let item_name = $("#item_Name").val();
     let item_qty = $("#item_QTY").val();
     let item_price = $("#item_Price").val();
 
     $('#tbl_item').append("<tr>" +
-        "<th scope='row'>" + item_id + "</th>" +
+        "<td scope='row'>" + item_id + "</td>" +
         "<td>" + item_name + "</td>" +
         "<td>" + item_qty + "</td>" +
         "<td>" + item_price + "</td>" +
         "</tr>")
-    }
-)
+    }*/
+})
 //============================================================================================
+
+
 
 //======================================Register Customer======================================================
 
@@ -427,6 +395,8 @@ document.getElementById("btn_add_to_cart").addEventListener("click", function ()
     }
 )
 //============================================================================================
+
+
 
 
 </script>
