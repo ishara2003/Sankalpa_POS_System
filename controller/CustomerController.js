@@ -7,12 +7,32 @@ export class CustomerController {
     constructor() {
         $('#btn_add_customer').click(this.handleCustomerValidation.bind(this));
         $('#btn_update').click(this.handleUpdateCustomer.bind(this));
-        $('#btn_search').click(this.handleDeleteCustomer.bind(this));
+        $('#btn_clear_txt_filed').click(this.handleDeleteCustomer.bind(this));
+        $('#order_cus_nic').keyup(this.show_Cus_Name.bind(this));
         this.handleLoadCustomerDatar();
         // this.handleCustomerValidation();
     }
 
+    show_Cus_Name(){
+
+        console.log("NIC Key presed");
+        let cus_nic=$('#order_cus_nic').val();
+
+        let pre_data =JSON.parse(localStorage.getItem(data));
+
+       let search1 = search(pre_data,cus_nic);
+       if(search1!==null){
+
+           console.log(search1._name);
+
+           $('#order_cus_name').val(search1._name);
+
+       }
+
+    }
+
     handleCustomerValidation(){
+
 
         const regex=/^\d+$/;
 
@@ -79,15 +99,42 @@ this.handleSaveCustomer();
         this.handleLoadCustomerDatar();
     }
 
-
-    handleUpdateCustomer(){
+    handleUpdateCustomer(i){
         console.log("UpdateCustomer");
+
+        i=$('#Customer_Id').val();
+
+        let customers=JSON.parse(localStorage.getItem(data));
+
+        if(customers._nic===i){
+            customers._name=$('#Customer_Name').val();
+        }
+      /*
+        customers.map((result,index) => {
+            if (result._nic===i){
+
+                customers._name=$('#Customer_Name').val();
+            }
+        });*/
+
+        localStorage.setItem(data,JSON.stringify(customers));
+        this.handleLoadCustomerDatar();
+
     }
 
     handleDeleteCustomer(i){
 
+        i=$('#Customer_Id').val();
+
             let customers=JSON.parse(localStorage.getItem(data));
-            customers.splice(i,1);
+
+            customers.map((result,index) => {
+                if (result._nic===i){
+
+            customers.splice(index,1);
+                }
+        });
+
             localStorage.setItem(data,JSON.stringify(customers));
             this.handleLoadCustomerDatar();
 
@@ -111,9 +158,40 @@ this.handleSaveCustomer();
 
     }
 
+    update_Cus(){
+        let index =checkCusResentId(data,customer._id);
+        if (index!==-1) {
+            data_arr[index]._name = $('#customerNameC').val(),
+                data_arr[index]._address = $('#customerAddressC').val(),
+                data_arr[index]._mobile = $('#customerMobileC').val(),
+                data_arr[index]._salary = $('#customerSalaryC').val()
+            data_arr.splice(index,1,customer)
+        }else {
+            console.log("+++++++++")
+            data_arr.unshift(customer);
+        }
+        localStorage.setItem(cusData, JSON.stringify(data_arr));
+        loadCustomerData();
+    }
+
 }
 
+function search(arr, nic) {
+    for (const arrElement of arr){
+        if (arrElement._nic===nic){
+            console.log(arrElement);
+            return arrElement;
+        }
+    }
+        return null;
+}
+
+
+
+
+
 new CustomerController();
+
 /*
 let arr =[];
 const data="DATA";
@@ -186,5 +264,16 @@ $('#tbl_customer').on('click','tr',(event)=>{
 
 
 });
+
+/*============================================================================================*/
+
+function checkCusResentId(arr,id){
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i]._id===id) {
+            return i;
+        }
+    }
+    return -1;
+}
 
 /*============================================================================================*/

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Assigment6</title>
+    <title>index</title>
 
     <link rel="stylesheet" href="asset/CSS/Css.css">
     <link rel="stylesheet" href="asset/boostrap/css/bootstrap.min.css">
@@ -94,28 +94,14 @@
         </thead>
 
         <tbody id="tbody_customer">
-        <tr>
-            <td scope="row">1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <td scope="row">2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <td scope="row">3</td>
-            <td>Larry the Bird</td>
-            <td>jone</td>
-            <td>@twitter</td>
-        </tr>
+
         </tbody>
     </table>
 
 </customer_pane>
+
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
 <itam_pane id="item_pane">
 
@@ -153,31 +139,17 @@
         </tr>
         </thead>
 
-        <tbody>
-        <tr>
-            <td scope="row">1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-       <tr>
-            <td scope="row">2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <td scope="row">3</td>
-            <td colspan="2">Larry the Bird</td>
-            <td colspan="2"> Bird</td>
-            <td>@twitter</td>
-        </tr>
+        <tbody id="btl_item_tbody">
+
+
         </tbody>
     </table>
 
     </div>
 
 </itam_pane>
+
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 
 <Place_Order id="place_order">
 
@@ -191,9 +163,9 @@
     <input type="date" name="" id="order_date">
 
 
-    <input type="text" name="" id="order_item_name" placeholder="Item_name / Id">
-    <input type="text" name="" id="order_item_price"disabled placeholder="Item_Price">
-    <input type="text" name="" id="order_item_qty"disabled placeholder="Item_QTY / Id">
+    <input type="text" name="" id="order_item_name" placeholder="Item_Id">
+    <input type="text" name="" id="order_item_price" placeholder="Item_Price" disabled>
+    <input type="text" name="" id="order_item_qty" placeholder="Item_QTY" disabled>
 
     <button id="btn_add_to_cart" type="button"><i class="fa-solid fa-cart-plus fa-beat-fade"></i>   Add</button>
     <button id="btn_order_clear" type="button">Clear</button>
@@ -212,44 +184,9 @@
         </tr>
         </thead>
 
-        <tbody id="tbody_item">
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr><tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-        </tr>
+        <tbody id="tbody_order">
+
+
         </tbody>
     </table>
     <div></div>
@@ -262,9 +199,49 @@
     <button id="btn_place_order" type="button">Place Order</button>
 </Place_Order>
 
+<!--//////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<section id="order_details_section">
+
+    <input type="date" name="" id="date_filter">
+    <input type="text" name="" id="txt_od_cusNIC" placeholder="Customer NIC">
+    <input type="text" name="" id="txt_od_ID" placeholder="Order Id">
+    <button id="btn_Filter">Filter</button>
+
+<div id="tbody">
+
+
+    <table id="tbl_order_details" class="table">
+
+        <thead>
+        <tr>
+            <th scope="col">#Order_Id</th>
+            <th class="th_od_NIC" scope="col">#NIC</th>
+            <th scope="col">Date</th>
+            <th scope="col">Item_Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity_Used</th>
+            <th scope="col">total</th>
+        </tr>
+        </thead>
+
+
+
+        <tbody id="tbody_order_details">
+        <tr>
+
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</section>
+
 <script src="asset/jQuerry/jquery-3.6.4.min.js"></script>
 <script type="module" src="controller/CustomerController.js"></script>
 <script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="controller/OrderController.js"></script>
+<script type="module" src="controller/Order_Details_Controller.js"></script>
 <script src="db/dbConnection.js"></script>
 <script src="controller/CustomerController.js"></script>
 <script !src="">
@@ -297,6 +274,8 @@ document.getElementById("nav_cus").addEventListener("click",function () {
     $('#dash_Board').css({display: "block"})
     $('#item_pane').css({display: "none"})
     $('#place_order').css({display: "none"})
+    $('#order_details_section').css({display: "none"})
+
 
 });
 
@@ -305,6 +284,8 @@ document.getElementById("btn_new_cus_at_Order").addEventListener("click",functio
     $('#dash_Board').css({display: "block"})
     $('#item_pane').css({display: "none"})
     $('#place_order').css({display: "none"})
+    $('#order_details_section').css({display: "none"})
+
 
 });
 
@@ -316,7 +297,9 @@ document.getElementById("items").addEventListener("click",function () {
     $('#item_pane').css({display: "block"})
     $('#dash_Board').css({display: "none"})
     $('#place_order').css({display: "none"})
-    console.log("abasdasd");
+    $('#order_details_section').css({display: "none"})
+
+    // console.log("abasdasd");
 
 });
 
@@ -328,9 +311,20 @@ document.getElementById("order").addEventListener("click",function () {
     $('#place_order').css({display: "block"})
     $('#item_pane').css({display: "none"})
     $('#dash_Board').css({display: "none"})
-    console.log("abasdasd");
+    $('#order_details_section').css({display: "none"})
+
+    // console.log("abasdasd");
 
 });
+
+//============================================================================================
+
+$('#order_details').on('click',function () {
+    $('#place_order').css({display: "none"})
+    $('#item_pane').css({display: "none"})
+    $('#dash_Board').css({display: "none"})
+    $('#order_details_section').css({display: "block"})
+})
 
 //============================================================================================
 
@@ -348,17 +342,16 @@ $('#btn_update').on('click',(event)=>{
 
 /*=====================================================================================================================*/
 
-$('#tbl_customer').innerHTML=null;
 
 // loadData();
 
 //============================================================================================
 
 //======================================Register Item======================================================
-
+/*
 document.getElementById("btn_add_item").addEventListener("click", function () {
 
-    /*        let item_id = $("#item_ID").val();
+            let item_id = $("#item_ID").val();
     console.log(item_id);
     let item_name = $("#item_Name").val();
     let item_qty = $("#item_QTY").val();
@@ -370,8 +363,7 @@ document.getElementById("btn_add_item").addEventListener("click", function () {
         "<td>" + item_qty + "</td>" +
         "<td>" + item_price + "</td>" +
         "</tr>")
-    }*/
-})
+    })*/
 //============================================================================================
 
 
@@ -379,19 +371,20 @@ document.getElementById("btn_add_item").addEventListener("click", function () {
 //======================================Register Customer======================================================
 
 document.getElementById("btn_add_to_cart").addEventListener("click", function () {
+    console.log("ssese");
+    /* console.log("ssss");
+     let order_id = $("#order_id").val();
+     console.log(order_id);
+     let item_name = $("#order_item_name").val();
+     let item_price =$("#order_cus_nic").val();
+     let qty_used = $("#order_qty").val();
 
-        let order_id = $("#order_id").val();
-    console.log(order_id);
-    let item_name = $("#order_item_name").val();
-    let item_price =$("#order_cus_nic").val();
-    let qty_used = $("#order_qty").val();
-
-    $('#tbl_order').append("<tr>" +
-        "<th scope='row'>" + order_id + "</th>" +
-        "<td>" + item_name + "</td>" +
-        "<td>" + item_price + "</td>" +
-        "<td>" + qty_used + "</td>" +
-        "</tr>")
+     $('#tbl_order').append("<tr>" +
+         "<th scope='row'>" + order_id + "</th>" +
+         "<td>" + item_name + "</td>" +
+         "<td>" + item_price + "</td>" +
+         "<td>" + qty_used + "</td>" +
+         "</tr>")*/
     }
 )
 //============================================================================================

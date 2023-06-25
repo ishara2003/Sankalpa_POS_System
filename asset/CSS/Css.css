@@ -154,6 +154,28 @@ thead > tr > th{
 }
 
 
+#order_details_section{
+    position: absolute;
+    /*z-index: 30;*/
+    margin-left: 0;
+    top: 0;
+    width: 99.5vw;
+    height: 98.9vh;
+    /*border: 2px solid hotpink;*/
+    display: none;
+}
+
+#tbody{
+    position: relative;
+
+    margin-left: 10vw;
+    top: 30vh;
+    width: 80vw;
+    height: 50vh;
+    /*border: 2px solid red;*/
+}
+
+
 #item_pane > input{
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Orbitron&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap');
     border-radius: 20px;
@@ -517,3 +539,45 @@ thead > tr > th{
      background: linear-gradient(to bottom, #ff6b6b, #ffb347); background-color: #78c5ef;
  }
 
+#date_filter{
+    position: relative;
+    width: 13vw;
+    height: 5vh;
+    border-radius: 10px;
+    left: 20vw;
+    top: 20vh;
+}
+
+#txt_od_cusNIC{
+    position: relative;
+    text-align: center;
+    width: 13vw;
+    height: 5vh;
+    border-radius: 10px;
+    left: 25vw;
+    top: 20vh;
+}
+
+#txt_od_ID{
+    position: relative;
+    text-align: center;
+    width: 13vw;
+    height: 5vh;
+    border-radius: 10px;
+    left: 30vw;
+    top: 20vh;
+}
+
+
+#btn_Filter{
+    position: relative;
+    width: 5vw;
+    height: 4vh;
+    border-radius: 10px;
+    background: #2323fd;
+    color: #FFFFFF;
+    font-size: 1.3rem;
+    font-family: Cambria, serif;
+    top: 20vh;
+    left: 35vw;
+}
