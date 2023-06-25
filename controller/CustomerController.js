@@ -102,22 +102,7 @@ this.handleSaveCustomer();
     handleUpdateCustomer(i){
         console.log("UpdateCustomer");
 
-        i=$('#Customer_Id').val();
-
-        let customers=JSON.parse(localStorage.getItem(data));
-
-        if(customers._nic===i){
-            customers._name=$('#Customer_Name').val();
-        }
-      /*
-        customers.map((result,index) => {
-            if (result._nic===i){
-
-                customers._name=$('#Customer_Name').val();
-            }
-        });*/
-
-        localStorage.setItem(data,JSON.stringify(customers));
+      this.update_Cus();
         this.handleLoadCustomerDatar();
 
     }
@@ -159,21 +144,34 @@ this.handleSaveCustomer();
     }
 
     update_Cus(){
-        let index =checkCusResentId(data,customer._id);
-        if (index!==-1) {
-            data_arr[index]._name = $('#customerNameC').val(),
-                data_arr[index]._address = $('#customerAddressC').val(),
-                data_arr[index]._mobile = $('#customerMobileC').val(),
-                data_arr[index]._salary = $('#customerSalaryC').val()
-            data_arr.splice(index,1,customer)
-        }else {
-            console.log("+++++++++")
-            data_arr.unshift(customer);
-        }
-        localStorage.setItem(cusData, JSON.stringify(data_arr));
-        loadCustomerData();
-    }
 
+        let parse = JSON.parse(localStorage.getItem(data));
+
+        let cus_nic = $("#Customer_Id").val();
+        let cus_name = $("#Customer_Name").val();
+        let cus_address = $("#Customer_Address").val();
+        let cus_number = $("#Customer_Number").val();
+
+        let new_customer = new Customer(cus_nic,cus_name,cus_address,cus_number);
+
+
+
+        let index=checkCusResentId(parse,cus_nic);
+
+        if (index!==null){
+
+            index._name=$('#Customer_Name').val();
+            index._address=$('#Customer_Address').val();
+            index._number=$('#Customer_Number').val();
+
+            parse.splice(index,new_customer);
+        }
+        localStorage.setItem(data,JSON.stringify(parse));
+        this.handleLoadCustomerDatar();
+
+
+
+    }
 }
 
 function search(arr, nic) {
@@ -186,9 +184,15 @@ function search(arr, nic) {
         return null;
 }
 
-
-
-
+function checkCusResentId(arr,nic){
+    for (const arrElement of arr){
+        if (arrElement._nic===nic){
+            // console.log(arrElement);
+            return arrElement;
+        }
+    }
+    return null;
+}
 
 new CustomerController();
 
@@ -267,13 +271,6 @@ $('#tbl_customer').on('click','tr',(event)=>{
 
 /*============================================================================================*/
 
-function checkCusResentId(arr,id){
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i]._id===id) {
-            return i;
-        }
-    }
-    return -1;
-}
+
 
 /*============================================================================================*/

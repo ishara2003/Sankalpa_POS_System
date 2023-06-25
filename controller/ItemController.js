@@ -8,6 +8,7 @@ export class ItemController {
     constructor() {
 
             $('#btn_add_item').click(this.saveItem.bind(this));
+            $('#btn_update_item').click(this.Update_Cus.bind(this));
             $('#btn_clear_txt_filed_item').click(this.deleteItem.bind(this));
             $('#order_item_name').keyup(this.search.bind(this));
             $('#btn_search_item').keyup(this.search.bind(this));
@@ -95,6 +96,36 @@ export class ItemController {
 
     }
 
+    Update_Cus(){
+        console.log("Updated");
+        let parse = JSON.parse(localStorage.getItem(itemData));
+
+        let item_id = $('#item_ID').val();
+        let item_name = $('#item_Name').val();
+        let item_qty = $('#item_QTY').val();
+        let item_price = $('#item_Price').val();
+
+        // console.log(item_id, item_name, item_qty, item_price);
+
+        let item = new Item(item_id,item_name,item_qty,item_price);
+
+        let index=checkCusResentId(parse,item_id);
+
+        if (index!==null){
+
+            index._name=$('#item_Name').val();
+            index._qty=$('#item_QTY').val();
+            index._price=$('#item_Price').val();
+
+            parse.splice(index,item);
+        }
+        localStorage.setItem(itemData,JSON.stringify(parse));
+        this.LoadItemData();
+
+
+
+    }
+
 }
 
 function searchItem(arr, item_Id) {
@@ -109,9 +140,17 @@ function searchItem(arr, item_Id) {
 
 }
 
+function checkCusResentId(arr,nic){
+    for (const arrElement of arr){
+        if (arrElement._id===nic){
+            // console.log(arrElement);
+            return arrElement;
+        }
+    }
+    return null;
+}
+
 new ItemController();
-
-
 
 $('#tbl_item').on('click','tr',(event)=>{
 
