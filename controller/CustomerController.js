@@ -10,7 +10,7 @@ export class CustomerController {
         $('#btn_clear_txt_filed').click(this.handleDeleteCustomer.bind(this));
         $('#order_cus_nic').keyup(this.show_Cus_Name.bind(this));
         this.handleLoadCustomerDatar();
-        // this.handleCustomerValidation();
+
     }
 
     show_Cus_Name(){
@@ -196,61 +196,6 @@ function checkCusResentId(arr,nic){
 
 new CustomerController();
 
-/*
-let arr =[];
-const data="DATA";
-document.getElementById("btn_add_customer").addEventListener("click", function () {
-
-        let cus_nic = $("#Customer_Id").val();
-        let cus_name = $("#Customer_Name").val();
-        let cus_address = $("#Customer_Address").val();
-        let cus_number = $("#Customer_Number").val();
-
-        console.log(cus_nic, cus_name, cus_address, cus_number);
-
-
-        let pre_data = localStorage.getItem(data);
-        let data_arr=[];
-        if(pre_data){
-            data_arr=JSON.parse(pre_data);
-        }
-
-        var cus_obj ={
-            Cus_NIC: cus_nic,
-            Cus_name: cus_name,
-            Cus_Address: cus_address,
-            Cus_Num: cus_number
-        }
-
-
-
-        data_arr.push(cus_obj);
-        console.log(JSON.stringify(cus_obj));
-        localStorage.setItem(data,JSON.stringify(data_arr));
-
-        loadData();
-
-    }
-);
-
-function loadData() {
-
-    let pre_data = localStorage.getItem(data);
-    var customer_data_arr = JSON.parse(pre_data);
-
-    customer_data_arr.map((result,index)=>{
-        $('#tbl_customer').append("<tr>" +
-            "<td scope='row'>" + result.Cus_NIC + "</td>" +
-            "<td>" + result.Cus_name + "</td>" +
-            "<td>" + result.Cus_Address + "</td>" +
-            "<td>" + result.Cus_Num + "</td>" +
-            "</tr>")
-    })
-}
-*/
-
-//=======================set Details from the table===================================
-
 $('#tbl_customer').on('click','tr',(event)=>{
 
     // let text = $(event.target.parentNode).eq(0).text();
@@ -269,8 +214,3 @@ $('#tbl_customer').on('click','tr',(event)=>{
 
 });
 
-/*============================================================================================*/
-
-
-
-/*============================================================================================*/

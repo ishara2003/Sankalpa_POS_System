@@ -23,11 +23,11 @@ export class OrderController {
 
     placeOrder(){
 
-
         this.LoadOrderDetailsData();
+        this.clearText();
+        this.LoadOrderData();
 
-localStorage.removeItem(orderData);
-this.LoadOrderData();
+        localStorage.removeItem(orderData);
     }
 
     saveOrder(){
@@ -83,7 +83,7 @@ this.LoadOrderData();
 
     }
 
-  LoadOrderDetailsData(){
+    LoadOrderDetailsData(){
 
         $('#tbody_order_details').empty();
 
@@ -131,7 +131,7 @@ this.LoadOrderData();
 
     }
 
-setDate(){
+    setDate(){
 
     const today = new Date();
     const year = today.getFullYear();
@@ -143,9 +143,24 @@ setDate(){
 
 
 }
-}
-new OrderController();
 
+    clearText(){
+
+        $('#order_id').val("");
+        $('#order_item_name').val("");
+         $('#order_qty').val("");
+         $('#order_item_price').val("");
+         $('#order_item_qty').val("");
+         $('#order_cus_nic').val("");
+         $('#order_cus_name').val("");
+         $('#order_date').val("");
+        $('#txt_total').val("");
+
+    }
+
+}
+
+new OrderController();
 
 
 $('#tbl_order').on('click','tr',(event)=>{
@@ -165,8 +180,6 @@ $('#tbl_order').on('click','tr',(event)=>{
 
 
 });
-
-
 
 let counter = 1;
 
